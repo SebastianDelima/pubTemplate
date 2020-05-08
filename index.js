@@ -40,7 +40,13 @@ class BST {
     }
 
     min(){
+        let currentNode = this.root;
 
+        while(currentNode.left){
+            currentNode = currentNode.left
+        }
+
+        return currentNode.value;
     }
 
     max(){
