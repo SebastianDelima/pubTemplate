@@ -60,8 +60,21 @@ class BST {
 
     }
 
-    contains(){
+    contains(value){
+        let currentNode = this.root
 
+        while(currentNode){
+            if(value === currentNode.value){
+                return true
+
+            }else if(value < currentNode.value){
+                currentNode = currentNode.left
+
+            }else if(value > currentNode.right){
+                currentNode = currentNode.right
+            }
+        }
+        return false
     }
 
     // depth first search in order
