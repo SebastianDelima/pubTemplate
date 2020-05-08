@@ -13,11 +13,30 @@ class BST {
     }
 
     size(){
-
+      return  this.count
     }
 
-    insert(){
+    insert(value){
+        this.count++;
+        let newNode = new Node(value);
 
+        const searchTree = node => {
+            if(value < node.value){
+                if(!node.left){
+                    node.left = newNode;
+                }else{
+                    searchTree(node.left);
+                }
+            }else if(value > node.value){
+                if(!node.right){
+                    node.right = newNode;
+                }else{
+                    searchTree(node.right)
+                }
+            }
+            
+        }
+        searchTree(this.root);
     }
 
     min(){
@@ -47,6 +66,6 @@ class BST {
 
     // breadth first search
     bfs(){
-        
+
     }
 }
